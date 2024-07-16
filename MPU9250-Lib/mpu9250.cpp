@@ -1,6 +1,6 @@
 #include "mpu.h"
 
-void MPU9250:: setmpu() {
+void MPU9250:: setmpu() { // function to set the MPU9250
     delay(100);
     
     writeinregister(0x69,0x6B,0x00); // wakeup mpu6050 selectare 20mhz oscilator 
@@ -15,14 +15,14 @@ void MPU9250:: setmpu() {
     writeinregister(0x0C,0x0A,0b00010110); // set continum mode
 }
 
-void MPU9250:: writeinregister(int disp, int reg, int val) {
+void MPU9250:: writeinregister(int disp, int reg, int val) { // function to write in register
     fir.beginTransmission(disp);
     fir.write(reg);
     fir.write(val);
     fir.endTransmission();
 }
 
-void MPU9250:: getAccelData() {
+void MPU9250:: getAccelData() { // functiom to get accelerometer data
     fir.beginTransmission(0x69);
     fir.write(0x3B);
     fir.endTransmission();
