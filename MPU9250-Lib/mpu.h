@@ -15,18 +15,6 @@ class MPU9250 {
     float mxs = 1.0;
     float mys = 1.0;
     float mzs = 1.0;
-    float mxh1 = 0.0;
-    float myh1 = 0.0; 
-    float mzh1 = 0.0;
-    float mxs1 = 1.0;
-    float mys1 = 1.0;
-    float mzs1 = 1.0;
-    float mxh2 = 0.0;
-    float myh2 = 0.0; 
-    float mzh2 = 0.0;
-    float mxs2 = 1.0;
-    float mys2 = 1.0;
-    float mzs2 = 1.0;
     float eInt[3] = {0.0, 0.0, 0.0};
     float q[4] = {1.0, 0.0, 0.0, 0.0};
 
@@ -42,7 +30,7 @@ class MPU9250 {
     void getMagDataCalibrated();
     void updatempumahoni(float ax, float ay, float az, float gx, float gy, float gz, float mx, float my, float mz, float deltat);
     void updatempumadgwick(float ax, float ay, float az, float gx, float gy, float gz, float mx, float my, float mz, float deltat);
-    void set_cal_mag_data(float maghx ,float maghy, float maghz, float magsx, float magsy, float magsz, float maghx1 ,float maghy1, float maghz1, float maghx2, float maghy2, float maghz2);
+    void set_cal_mag_data(float maghx ,float maghy, float maghz, float magsx, float magsy, float magsz);
 
   private:
     float asax = 180.0, asay = 182.0, asaz = 169.0;
