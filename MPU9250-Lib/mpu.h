@@ -47,11 +47,11 @@ class MPU9250 {
   private:
     float asax = 180.0, asay = 182.0, asaz = 169.0;
     float mxadj,myadj,mzadj;
-    float beta = sqrt(3.0f / 4.0f) *  PI * (60.0f / 180.0f); //gyro drift pentru madwick
+    float beta = sqrt(3.0f / 4.0f) *  PI * (60.0f / 180.0f); //gyro drift madwick
     float gyroxadj,gyroyadj,gyrozadj;
     float gyroxb,gyroyb,gyrozb;
-    static constexpr float Kp = 15 ;//42
-    static constexpr float Ki = 1.2 ;//0
+    static constexpr float Kp = 15; //Settings for madwick filter
+    static constexpr float Ki = 1.2;
      
     TwoWire& fir;
 
